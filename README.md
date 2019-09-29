@@ -3,6 +3,29 @@
 Some commands for Sublime Text 3 (NOT 2!) to list shortcut keys / preferences
 etc in the QuickPanel and navigate to edit location on selection.
 
+
+## Installation
+
+### By Package Control
+
+1. Download & Install `Sublime Text 3` (https://www.sublimetext.com/3)
+1. Go to the menu `Tools -> Install Package Control`, then,
+   wait few seconds until the `Package Control` installation finishes
+1. Go to the menu `Preferences -> Package Control`
+1. Type `Package Control Add Channel` on the opened quick panel and press <kbd>Enter</kbd>
+1. Then, input the following address and press <kbd>Enter</kbd>
+   ```
+   https://raw.githubusercontent.com/evandrocoan/StudioChannel/master/channel.json
+   ```
+1. Now, go again to the menu `Preferences -> Package Control`
+1. This time type `Package Control Install Package` on the opened quick panel and press <kbd>Enter</kbd>
+1. Then, search for `EditPreferences` and press <kbd>Enter</kbd>
+
+See also:
+1. [ITE - Integrated Toolset Environment](https://github.com/evandrocoan/ITE)
+1. [Package control docs](https://packagecontrol.io/docs/usage) for details.
+
+
 === 2000 Words ===
 
 {{http://ndudfield.com/zencoding/old/editprefs-settings.gif}}
@@ -33,7 +56,7 @@ In sublime `{"keys": [...]}` terms previous exmaple would be:
 The following bindings show how it works.
 Note the `expecting_binding_repr_mode` key.
 
-{{{
+```js
     {"args": {"val": "alt"},
      "command": "insert_binding_repr",
      "context": [{"key": "overlay_visible", "operand": true, "operator": "equal"},
@@ -41,9 +64,9 @@ Note the `expecting_binding_repr_mode` key.
                   "operand": false,
                   "operator": "equal"}],
      "keys": ["alt+="]}
-}}}
+```
 
-{{{
+```js
      {"args": {"val": "q"},
       "command": "insert_binding_repr",
       "context": [{"key": "overlay_visible", "operand": true, "operator": "equal"},
@@ -51,7 +74,7 @@ Note the `expecting_binding_repr_mode` key.
                    "operand": true,
                    "operator": "equal"}],
       "keys": ["q"]}
-}}}
+```
 
 So how would you insert ctrl+alt+q? (In sublime terms)
 
@@ -76,7 +99,7 @@ The workaround is to type the first letter of the key you desire, eg:
 
 === Command Palette ===
 
-{{{
+```js
 [
     { "caption": "Edit Preference: List Settings",         "command": "list_settings"},
     { "caption": "Edit Preference: List Plugins Commands", "command": "list_commands" },
@@ -115,9 +138,9 @@ The workaround is to type the first letter of the key you desire, eg:
       "command": "edit_package_files",
       "args": {"pref_type": "sublime-commands"}}
 ]
-}}}
+```
 
-=== TODO === 
+=== TODO ===
 
 Set cyclic tab key for auto complete
 
